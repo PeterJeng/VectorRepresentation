@@ -10,9 +10,9 @@ public class TaskOne {
 
 	public static void main(String[] args) throws IOException {
 		Parser parser = new Parser();
-		parser.readFile("test.txt");
+		parser.readFile("glove.6B.50d.txt");
 		
-		String word = "his";
+		String word = "taiwan";
 		
 		Vector ourWord = parser.wordList.get(word);
 	
