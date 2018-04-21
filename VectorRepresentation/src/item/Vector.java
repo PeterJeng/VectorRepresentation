@@ -37,6 +37,10 @@ public class Vector {
 		return Math.sqrt(dotProduct(vector, vector));
 	}
 	
+	public static double cosineSimilarity(Vector v1, Vector v2) {
+		return Math.acos(dotProduct(v1, v2)/(magnitude(v1) * magnitude(v2)));
+	}
+	
 	public String toString() {
 		String string = "";
 		
