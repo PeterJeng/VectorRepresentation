@@ -38,7 +38,7 @@ public class Vector {
 	}
 	
 	public static double cosineSimilarity(Vector v1, Vector v2) {
-		return Math.acos(dotProduct(v1, v2)/(magnitude(v1) * magnitude(v2)));
+		return dotProduct(v1, v2)/(magnitude(v1) * magnitude(v2));
 	}
 	
 	public Vector sum(Vector v) {

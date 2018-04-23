@@ -15,7 +15,7 @@ public class WordNode  implements Comparable<WordNode> {
 
 	@Override
 	public int compareTo(WordNode o) {
-		if(this.cosSimilarity - o.cosSimilarity < 0) {
+		if(this.cosSimilarity - o.cosSimilarity > 0) {
 			return 1;
 		}
 		else if(this.cosSimilarity - o.cosSimilarity == 0) {

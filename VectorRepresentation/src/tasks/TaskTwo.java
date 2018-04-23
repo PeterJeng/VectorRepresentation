@@ -11,10 +11,12 @@ import item.WordNode;
 public class TaskTwo {
 
 	public static void main(String[] args) throws IOException {
+		//read text file
 		Parser parser = new Parser();
 		parser.readFile("glove.6B.50d.txt");
 
-		String sentence = "baby boy";
+		//change sentence to vector
+		String sentence = "happy friday";
 		
 		sentence = sentence.toLowerCase();
 		
@@ -55,7 +57,7 @@ public class TaskTwo {
 			else {
 				double cosSim = Vector.cosineSimilarity(sentenceVector, value);
 				
-				if(cosSim < queue.peek().cosSimilarity) {
+				if(cosSim > queue.peek().cosSimilarity) {
 					WordNode wn = new WordNode(key, cosSim);
 					queue.poll();
 					queue.add(wn);		
