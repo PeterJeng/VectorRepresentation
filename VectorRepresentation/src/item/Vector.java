@@ -41,6 +41,27 @@ public class Vector {
 		return Math.acos(dotProduct(v1, v2)/(magnitude(v1) * magnitude(v2)));
 	}
 	
+	public Vector sum(Vector v) {
+		Vector vector = new Vector();
+		
+		for(int i = 0; i < v.list.size(); i++) {
+			if(this.list.isEmpty()) {
+				vector.list = v.list;
+				continue;
+			}
+			
+			vector.list.add(this.list.get(i) + v.list.get(i));
+		}
+		
+		return vector;
+	}
+	
+	public void averageSum(double count) {
+		for(int i = 0; i < this.list.size(); i++) {
+			this.list.set(i, this.list.get(i)/count);
+		}
+	}
+	
 	public String toString() {
 		String string = "";
 		

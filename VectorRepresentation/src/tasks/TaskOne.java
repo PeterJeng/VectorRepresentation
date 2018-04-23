@@ -12,9 +12,18 @@ public class TaskOne {
 		Parser parser = new Parser();
 		parser.readFile("glove.6B.50d.txt");
 		
-		String word = "taiwan";
+		String word = "TAIWAN";
+		
+		word = word.toLowerCase();
 		
 		Vector ourWord = parser.wordList.get(word);
+		
+		
+		
+		if(ourWord == null) {
+			System.out.println("'" + word + "' is not in the dictionary");
+			System.exit(0);
+		}
 	
 		PriorityQueue<WordNode> queue = new PriorityQueue<WordNode>(5);
 		
@@ -25,7 +34,7 @@ public class TaskOne {
 			}
 			
 			Vector value = parser.wordList.get(key);
-			
+			 
 			if(queue.size() < 5) {
 				WordNode wn = new WordNode(key, Vector.cosineSimilarity(ourWord, value));
 				queue.add(wn);
